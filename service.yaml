@@ -1,0 +1,13 @@
+  tapiVersion: v1
+kind: Service
+metadata:
+  name: service-jenkins
+spec:
+  selector:
+    app: app-jenkins  # Match the label to your Deployment
+  ports:
+    - protocol: TCP
+      port: 81  # Port on which the service will be accessible
+      targetPort: 80  # Port on which your application listens
+ype: NodePort  # Change to NodePort or LoadBalancer if needed
+
