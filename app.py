@@ -2,7 +2,7 @@ import psutil
 import time
 
 def print_hello():
-    print("Hello,This is demo ")
+    print("Hello,This is demo for CI-CD ")
 
 def monitor_system_resources(interval_seconds=10):
     while True:
