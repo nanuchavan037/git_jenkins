@@ -19,3 +19,16 @@ spec:
           image: nanuchavan037/jenkins:v1
           ports:
             - containerPort: 81  # The port your application listens on
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-jenkins
+spec:
+  selector:
+    app: app-jenkins  # Match the label to your Deployment
+  ports:
+    - protocol: TCP
+      port: 81  # Port on which the service will be accessible
+      targetPort: 80  # Port on which your application listens
+type: NodePort
