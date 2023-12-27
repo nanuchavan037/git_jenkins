@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-jenkins
+  labels:
+    app: app-jenkins
+spec:
+  replicas: 2  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: app-jenkins
+  template:
+    metadata:
+      labels:
+        app: app-jenkins
+    spec:
+      containers:
+        - name: jenkins
+          image: nanuchavan037/jenkins:v1
+          ports:
+            - containerPort: 81  # The port your application listens on
+
+
