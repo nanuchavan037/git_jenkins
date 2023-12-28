@@ -4,10 +4,9 @@ FROM python:3.8
 # Set the working directory in the Docker image
 WORKDIR /app
 
-RUN pip install psutil
-
-# Clone the GitHub repository
-RUN git clone https://github.com/nanuchavan037/git_jenkins.git .
+# cloning git repository
+RUN pip install psutil && \
+    git clone --depth 1 https://github.com/nanuchavan037/git_jenkins.git .
 
 # Expose a port
 EXPOSE 8080
